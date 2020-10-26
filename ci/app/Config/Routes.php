@@ -36,10 +36,12 @@ $routes->post('/postlogin', 'Pages::postlogin');
 $routes->get('/register', 'Pages::register');
 $routes->get('/login', 'Pages::login');
 $routes->get('/note', 'Pages::note');
+$routes->get('/cat', 'Pages::cat');
 $routes->get('/printlist', 'Pages::printlist');
 $routes->get('/print', 'Pages::print');
 $routes->get('/updatenote', 'Pages::updatenote');
 $routes->post('/postnote', 'Pages::postnote');
+$routes->post('/cat', 'Pages::postcat');
 $routes->post('/postnoteupdate', 'Pages::postnoteupdate');
 
 /**

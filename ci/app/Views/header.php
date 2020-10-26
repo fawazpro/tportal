@@ -19,6 +19,9 @@
 
 <!-- App css -->
     <link rel="stylesheet" href="assets/css/app.min.css" type="text/css">
+    <link rel="stylesheet" href="vendors/summernote/summernote4.min.css" type="text/css">
+    <script src="vendors/jquery.js"></script>
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

@@ -77,16 +77,40 @@ class Pages extends BaseController
 
 	public function note()
 	{
-        $subjects = new \App\Models\Subjects();
-		$notes = new \App\Models\Notes();
 		$session = session();
+		$subjects = [['subject'=>$session->subj1],['subject'=>$session->subj2]];
+		$notes = new \App\Models\Notes();
+		$note = $notes->where(['subject' => $session->subj1])->orWhere(['subject' => $session->subj2])->find();
+		$sidebar_data = [
+			'note_count' => count($note),
+		];
 		$data = [
-			'subjects' => $subjects->findAll(),
-			'notes' => $notes->where(['subject' => $session->subj1])->orWhere(['subject' => $session->subj2])->find()
+			'subjects' => $subjects,
+			'notes' => $note,
 		];
 		echo view('header');
-		echo view('sidebar');
+		echo view('sidebar',$sidebar_data);
 		echo view('note', $data);
+		echo view('footerline');
+		echo view('footer');
+	}
+
+	public function cat()
+	{
+		$notes = new \App\Models\Notes();
+		$session = session();
+		$subjects = [['subject'=>$session->subj1],['subject'=>$session->subj2]];
+		$note = $notes->where(['subject' => $session->subj1])->orWhere(['subject' => $session->subj2])->find();
+		$sidebar_data = [
+			'note_count' => count($note),
+		];
+		$data = [
+			'subjects' => $subjects,
+			'notes' => $note,
+		];
+		echo view('header');
+		echo view('sidebar',$sidebar_data);
+		echo view('cat', $data);
 		echo view('footerline');
 		echo view('footer');
 	}
@@ -149,6 +173,20 @@ class Pages extends BaseController
 		$note->save($incoming);
 		echo view('authheader');
 		echo view('notemsg', ['msg'=>'The note upload was a success']);
+		echo view('footer');
+	}
+
+	public function postcat()
+	{
+        // $note = new \App\Models\Notes();
+		$incoming = $this->request->getPost();
+		$incoming['term'] = $this->TERM;
+		
+		// $note->save($incoming);
+		$input = $incoming;
+		$res = var_dump($input);
+		echo view('authheader');
+		echo view('notemsg', ['msg'=>$res]);
 		echo view('footer');
 	}
 

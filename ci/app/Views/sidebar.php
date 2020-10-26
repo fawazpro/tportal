@@ -20,12 +20,20 @@
                         </a>
                     </li>
                     <li>
-                        <a href="chat.html">
+                        <a href="note">
                             <span class="nav-link-icon">
                                 <i data-feather="message-circle"></i>
                             </span>
                             <span>Note</span>
-                            <span class="badge badge-danger">5</span>
+                            <span class="badge badge-danger"><?=$note_count?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cat">
+                            <span class="nav-link-icon">
+                                <i data-feather="message-circle"></i>
+                            </span>
+                            <span>Mid Term Test</span>
                         </a>
                     </li>
                 </ul>
