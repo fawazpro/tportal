@@ -25,7 +25,7 @@
                                 <i data-feather="message-circle"></i>
                             </span>
                             <span>Note</span>
-                            <span class="badge badge-danger"><?=$note_count?></span>
+                            <span class="badge badge-danger"></span>
                         </a>
                     </li>
                     <li>

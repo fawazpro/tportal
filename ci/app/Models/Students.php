@@ -11,7 +11,7 @@ class Students extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['fname','lname','phone','paid','class'];
+    protected $allowedFields = ['fname','lname','phone','paid','class','combo1','combo2'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

@@ -11,7 +11,7 @@ class Cat extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['class','term','subject','content'];
+    protected $allowedFields = ['class','term','subject','obj','fig','thr'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
